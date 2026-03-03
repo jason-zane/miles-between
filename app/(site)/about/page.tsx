@@ -33,15 +33,15 @@ export default function AboutPage() {
   return (
     <div className="bg-[var(--site-bg)] text-[var(--site-text-primary)]">
       {/* ── HEADER ────────────────────────────────────────────────────────── */}
-      <section className="bg-[var(--site-accent-strong)] pt-40 pb-24 md:pt-52 md:pb-32">
+      <section className="relative overflow-hidden border-b border-[color:var(--site-on-dark-primary)]/12 bg-gradient-to-b from-[var(--site-accent-strong)] to-[var(--site-accent-deep)] pt-40 pb-24 md:pt-52 md:pb-32">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <Reveal delay={0.1}>
-            <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.25em] text-[var(--site-text-secondary)]">
+            <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--site-text-secondary)]">
               About
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <h1 className="mb-8 font-serif text-5xl font-bold leading-[1.05] text-[var(--site-bg)] md:text-7xl">
+            <h1 className="mb-8 font-serif text-5xl font-semibold leading-[1.02] text-[var(--site-bg)] md:text-7xl">
               Why Miles Between
               <br />
               <span className="italic">exists.</span>
@@ -113,21 +113,21 @@ export default function AboutPage() {
       </section>
 
       {/* ── WHO WE ARE ────────────────────────────────────────────────────── */}
-      <section className="bg-[var(--site-bg)] py-24 md:py-36">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-28">
-            <Reveal delay={0.05} y={32}>
-              <div className="relative aspect-square w-full overflow-hidden rounded-sm">
-                <Image
-                  src={brandImagery.about.team.src}
-                  alt={brandImagery.about.team.alt}
-                  fill
-                  className="object-cover object-[center_35%] transition-transform duration-700 hover:scale-[1.03] md:object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </Reveal>
-            <div>
+      <section className="bg-[var(--site-bg)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <Reveal delay={0.05} y={32} className="min-h-[320px] lg:min-h-[560px]">
+            <div className="relative h-full w-full min-h-[320px] lg:min-h-[560px]">
+              <Image
+                src={brandImagery.about.team.src}
+                alt={brandImagery.about.team.alt}
+                fill
+                className="object-cover object-[center_35%] md:object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </Reveal>
+          <div className="flex items-center py-24 md:py-36">
+            <div className="w-full px-6 md:px-12 lg:pr-[calc((100vw-80rem)/2)] lg:pl-16">
               <Reveal delay={0.1}>
                 <p className="font-ui mb-6 text-xs font-medium uppercase tracking-[0.2em] text-[var(--site-text-muted)]">
                   Who we are

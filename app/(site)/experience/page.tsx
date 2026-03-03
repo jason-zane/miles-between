@@ -82,15 +82,15 @@ export default function ExperiencePage() {
   return (
     <div className="bg-[var(--site-bg)] text-[var(--site-text-primary)]">
       {/* ── HEADER ────────────────────────────────────────────────────────── */}
-      <section className="bg-[var(--site-accent-strong)] pt-40 pb-24 md:pt-52 md:pb-32">
+      <section className="relative overflow-hidden border-b border-[color:var(--site-on-dark-primary)]/12 bg-gradient-to-b from-[var(--site-accent-strong)] to-[var(--site-accent-deep)] pt-40 pb-24 md:pt-52 md:pb-32">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <Reveal delay={0.1}>
-            <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.25em] text-[var(--site-text-secondary)]">
+            <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--site-text-secondary)]">
               The Experience
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <h1 className="mb-8 font-serif text-5xl font-bold leading-[1.05] text-[var(--site-bg)] md:text-7xl">
+            <h1 className="mb-8 font-serif text-5xl font-semibold leading-[1.02] text-[var(--site-bg)] md:text-7xl">
               What a retreat
               <br />
               <span className="italic">looks like, hour by hour.</span>
@@ -119,14 +119,13 @@ export default function ExperiencePage() {
             </div>
           </Reveal>
 
-          <div className="space-y-16 md:space-y-20">
+          <div className="space-y-14 md:space-y-16">
             {PILLARS.map((pillar, i) => (
               <Reveal key={pillar.num} delay={0.1}>
-                <div
-                  className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14`}
-                >
+                <div className="space-y-10">
+                  <div className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14`}>
                   <div className={i % 2 === 1 ? 'order-1 lg:order-2' : ''}>
-                    <p className="font-ui mb-3 text-xs font-medium tracking-[0.25em] text-[var(--site-text-muted)]">
+                    <p className="font-ui mb-3 text-xs font-medium tracking-[0.16em] text-[var(--site-text-muted)]">
                       {pillar.num}
                     </p>
                     <h2 className="mb-4 font-serif text-3xl font-bold text-[var(--site-text-primary)] md:text-4xl">
@@ -140,7 +139,7 @@ export default function ExperiencePage() {
                         src={pillar.img}
                         alt={pillar.alt}
                         fill
-                        className={`object-cover transition-transform duration-700 hover:scale-[1.03] ${
+                        className={`object-cover transition-transform duration-500 hover:scale-[1.02] ${
                           pillar.num === '02'
                             ? 'object-[center_58%] md:object-center'
                             : pillar.num === '04'
@@ -151,6 +150,8 @@ export default function ExperiencePage() {
                       />
                     </div>
                   </div>
+                </div>
+                  {i < PILLARS.length - 1 ? <div className="h-px bg-[var(--site-divider)]/60" /> : null}
                 </div>
               </Reveal>
             ))}
@@ -225,7 +226,8 @@ export default function ExperiencePage() {
                   quality, pacing, and recovery so the weekend feels strong without becoming rigid.
                 </p>
                 <p className="mt-6 text-lg leading-relaxed text-[var(--site-on-dark-muted)]">
-                  You should be comfortable running 10–15 km. Beyond that, we'd love to have you.
+                  You should be comfortable running 10–15 km. Beyond that, we&apos;d love to have
+                  you.
                 </p>
               </div>
             </Reveal>

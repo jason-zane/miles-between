@@ -142,7 +142,7 @@ export function ParallaxHero({
           ) : null}
         </div>
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-900/40 to-stone-900/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--site-accent-deep)]/88 via-stone-950/38 to-stone-900/8" />
       {children}
     </section>
   )

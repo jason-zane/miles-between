@@ -20,21 +20,21 @@ export function StickySiteCta({ retreat }: { retreat: Retreat }) {
           animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
           transition={{ type: 'spring', stiffness: 260, damping: 26 }}
-          className="fixed bottom-3 right-3 z-40 w-[280px] rounded-md border border-[var(--site-border-soft)] bg-[var(--site-surface-elevated)]/70 p-4 shadow-xl backdrop-blur-md sm:bottom-5 sm:right-5"
+          className="fixed bottom-3 right-3 z-40 w-[296px] rounded-md border border-[var(--site-divider)] bg-[var(--site-surface-elevated)]/90 p-4 shadow-xl backdrop-blur-md sm:bottom-5 sm:right-5"
         >
           <button
             type="button"
             aria-label="Dismiss popup"
             onClick={dismiss}
-            className="absolute right-3 top-3 text-xs text-[var(--site-text-muted)] transition hover:text-[var(--site-text-primary)]"
+            className="absolute right-3 top-3 text-xs text-[var(--site-text-muted)] transition hover:text-[var(--site-accent-strong)]"
           >
             Close
           </button>
-          <div className="space-y-2">
-            <p className={`${siteTextClasses.meta} text-[var(--site-text-muted)]`}>Next retreat</p>
+          <div className="space-y-1.5">
+            <p className={`${siteTextClasses.meta} text-[var(--site-text-body)]`}>Next retreat</p>
             <p className="font-serif text-base font-semibold text-[var(--site-text-primary)]">{retreat.name}</p>
-            <p className="text-xs text-[var(--site-text-muted)]">{retreat.dates}</p>
-            <p className="text-xs text-[var(--site-text-muted)]">Limited spaces remaining</p>
+            <p className="text-xs text-[var(--site-text-body)]">{retreat.dates}</p>
+            <p className="text-xs text-[var(--site-text-body)]">Limited spaces remaining</p>
           </div>
           <a
             href={`/retreats/${retreat.slug}`}

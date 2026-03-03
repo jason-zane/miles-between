@@ -20,7 +20,7 @@ export function StickyRetreatCta({ retreat }: { retreat: Retreat }) {
           animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
           transition={{ type: 'spring', stiffness: 260, damping: 26 }}
-          className="fixed bottom-3 right-3 z-40 w-[300px] rounded-md border border-[color:var(--site-on-dark-primary)]/10 bg-[color:var(--site-accent-strong)]/70 p-4 shadow-2xl backdrop-blur-md sm:bottom-5 sm:right-5"
+          className="fixed bottom-3 right-3 z-40 w-[304px] rounded-md border border-[color:var(--site-on-dark-primary)]/12 bg-[color:var(--site-accent-strong)]/86 p-4 shadow-2xl backdrop-blur-md sm:bottom-5 sm:right-5"
         >
           <button
             type="button"
@@ -30,11 +30,11 @@ export function StickyRetreatCta({ retreat }: { retreat: Retreat }) {
           >
             Close
           </button>
-          <div className="space-y-2">
-            <p className={`${siteTextClasses.meta} text-[var(--site-on-dark-muted)]`}>Next retreat</p>
+          <div className="space-y-1.5">
+            <p className={`${siteTextClasses.meta} text-[var(--site-on-dark-primary)]/90`}>Next retreat</p>
             <p className="font-serif text-base font-semibold text-[var(--site-on-dark-primary)]">{retreat.name}</p>
-            <p className="text-xs text-[var(--site-on-dark-muted)]">{retreat.dates}</p>
-            <p className="text-xs text-[var(--site-on-dark-muted)]">Limited spaces remaining</p>
+            <p className="text-xs text-[var(--site-on-dark-primary)]/85">{retreat.dates}</p>
+            <p className="text-xs text-[var(--site-on-dark-primary)]/85">Limited spaces remaining</p>
           </div>
           <a
             href="#register"

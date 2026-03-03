@@ -16,10 +16,10 @@ export default function Home() {
       <Marquee />
 
       {/* ── WHAT IS MILES BETWEEN ─────────────────────────────────────────── */}
-      <section className="bg-[var(--site-bg)] py-28 md:py-40">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-28">
-            <div>
+      <section className="bg-[var(--site-bg)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="flex items-center py-28 md:py-40">
+            <div className="w-full px-6 md:px-12 lg:pl-[calc((100vw-80rem)/2)] lg:pr-16">
               <Reveal delay={0.05}>
                 <p className="font-ui mb-6 text-xs font-medium uppercase tracking-[0.2em] text-[var(--site-text-muted)]">
                   What we are
@@ -45,23 +45,19 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
-            <Reveal delay={0.1} y={32}>
-              <div className="relative">
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
-                  <Image
-                    src={brandImagery.home.story.src}
-                    alt={brandImagery.home.story.alt}
-                    fill
-                    className="object-cover object-[center_42%] transition-transform duration-700 hover:scale-[1.03] md:object-center"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="absolute -bottom-5 -left-5 -z-10 h-36 w-36 rounded-sm bg-[var(--site-border-soft)]" />
-                <div className="absolute -right-5 -top-5 -z-10 h-24 w-24 rounded-sm bg-[var(--site-surface-alt)]" />
-              </div>
-            </Reveal>
           </div>
+
+          <Reveal delay={0.1} y={32} className="min-h-[320px] lg:min-h-[560px]">
+            <div className="relative h-full w-full min-h-[320px] lg:min-h-[560px]">
+              <Image
+                src={brandImagery.home.story.src}
+                alt={brandImagery.home.story.alt}
+                fill
+                className="object-cover object-[center_42%] md:object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -117,7 +113,7 @@ export default function Home() {
       </section>
 
       {/* ── THE EXPERIENCE ────────────────────────────────────────────────── */}
-      <section className="bg-[var(--site-accent-strong)] py-28 md:py-40">
+      <section className="bg-gradient-to-br from-[var(--site-accent-strong)] via-[var(--site-accent-deep)] to-[var(--site-accent-strong)] py-28 md:py-40">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <div className="mb-20">
             <Reveal delay={0.05}>
@@ -159,14 +155,14 @@ export default function Home() {
               },
             ].map((card, i) => (
               <Reveal key={card.num} delay={i * 0.12}>
-                <div className="group flex flex-col">
+                <div className="group flex h-full flex-col">
                   <div className="mb-6 overflow-hidden rounded-sm">
                     <div className="relative aspect-[3/4] w-full">
                       <Image
                         src={card.img}
                         alt={card.alt}
                         fill
-                        className="object-cover transition-all duration-700 ease-out grayscale group-hover:scale-[1.03] group-hover:grayscale-0"
+                        className="object-cover transition-all duration-500 ease-out group-hover:scale-[1.02]"
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
@@ -228,7 +224,7 @@ export default function Home() {
                     src={brandImagery.home.spotlight.src}
                     alt={brandImagery.home.spotlight.alt}
                     fill
-                    className="object-cover object-[center_46%] transition-transform duration-700 hover:scale-[1.03] md:object-center"
+                    className="object-cover object-[center_46%] transition-transform duration-500 hover:scale-[1.02] md:object-center"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>

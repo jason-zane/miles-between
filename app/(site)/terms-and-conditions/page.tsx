@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 export default function TermsAndConditionsPage() {
   return (
     <div className="bg-[var(--site-bg)] text-[var(--site-text-primary)]">
-      <section className="bg-[var(--site-accent-strong)] pt-40 pb-24 md:pt-52 md:pb-32">
+      <section className="relative overflow-hidden border-b border-[color:var(--site-on-dark-primary)]/12 bg-gradient-to-b from-[var(--site-accent-strong)] to-[var(--site-accent-deep)] pt-40 pb-24 md:pt-52 md:pb-32">
         <div className="mx-auto max-w-5xl px-6 md:px-12">
-          <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.25em] text-[var(--site-text-secondary)]">
+          <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--site-text-secondary)]">
             Legal
           </p>
-          <h1 className="font-serif text-5xl font-bold leading-[1.05] text-[var(--site-bg)] md:text-7xl">
+          <h1 className="font-serif text-5xl font-semibold leading-[1.02] text-[var(--site-bg)] md:text-7xl">
             Terms and Conditions
           </h1>
         </div>

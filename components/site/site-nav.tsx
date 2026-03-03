@@ -50,20 +50,22 @@ export function SiteNav() {
     <>
       <nav
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          dark ? 'bg-[color:var(--site-accent-strong)]/95 shadow-sm backdrop-blur-md' : 'bg-transparent'
+          dark
+            ? 'border-b border-[color:var(--site-on-dark-primary)]/10 bg-[color:var(--site-accent-strong)]/92 shadow-sm backdrop-blur-md'
+            : 'bg-gradient-to-b from-black/35 via-black/10 to-transparent'
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-12">
           <TransitionLink
             href="/"
-            className={`font-serif text-xl font-bold tracking-tight transition-colors duration-500 ${
+            className={`font-serif text-xl font-semibold tracking-[0.01em] transition-colors duration-500 ${
               dark ? 'text-[var(--site-on-dark-primary)]' : 'text-white'
             }`}
           >
             MILES // BETWEEN
           </TransitionLink>
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-7 md:flex">
             {NAV_LINKS.map((link) => (
               <TransitionLink
                 key={link.href}
@@ -71,7 +73,7 @@ export function SiteNav() {
                 className={`relative transition-colors duration-300 ${siteTextClasses.nav} ${
                   dark
                     ? 'text-[var(--site-on-dark-muted)] hover:text-[var(--site-on-dark-primary)]'
-                    : 'text-white/80 hover:text-white'
+                    : 'text-white/85 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -95,7 +97,7 @@ export function SiteNav() {
               className={`rounded-full border px-5 py-2.5 text-sm transition-all duration-300 ${
                 dark
                   ? siteButtonClasses.outlineDark
-                  : 'border-white/80 text-white hover:bg-[var(--site-surface-elevated)] hover:text-[var(--site-text-primary)]'
+                  : 'border-white/80 text-white hover:bg-white hover:text-[var(--site-text-primary)]'
               }`}
             >
               {primaryCtaLabel}
@@ -143,7 +145,7 @@ export function SiteNav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] flex flex-col bg-[var(--site-accent-strong)] px-8 md:hidden"
+            className="fixed inset-0 z-[100] flex flex-col bg-gradient-to-b from-[var(--site-accent-strong)] to-[var(--site-accent-deep)] px-8 md:hidden"
           >
             <div className="flex flex-1 flex-col justify-center gap-2 pt-20">
               {NAV_LINKS.map((link, i) => (

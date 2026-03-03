@@ -6,32 +6,35 @@
 }
 
 .site-theme-v1 {
-  --site-bg: #faf8f4;
-  --site-surface: #faf8f4;
-  --site-surface-alt: #ede8df;
-  --site-text-primary: #1c1c1c;
-  --site-text-body: #4a4a4a;
-  --site-text-muted: #8a8a8a;
-  --site-text-secondary: #d7d2c8;
+  --site-bg: #f5f3e8;
+  --site-surface: #fcf9f1;
+  --site-surface-alt: #e2eadf;
+  --site-surface-contrast: #d3dfd0;
+  --site-text-primary: #141714;
+  --site-text-body: #313b35;
+  --site-text-muted: #657067;
+  --site-text-secondary: #cfdbc9;
   --site-surface-elevated: #ffffff;
-  --site-surface-soft: #f5f5f4;
-  --site-on-dark-primary: #faf8f4;
-  --site-on-dark-muted: #d7d2c8;
-  --site-accent: #7a9e8e;
-  --site-accent-strong: #2c4a3e;
-  --site-accent-deep: #243c32;
-  --site-border: #2c4a3e;
-  --site-border-soft: #d7d2c8;
-  --site-cta-bg: #5a1f1f;
+  --site-surface-soft: #ebf1e8;
+  --site-on-dark-primary: #f6f8f4;
+  --site-on-dark-muted: #c9d8c8;
+  --site-accent: #5f9d84;
+  --site-accent-bright: #2cc7a2;
+  --site-accent-strong: #123f38;
+  --site-accent-deep: #0b2c27;
+  --site-border: #123f38;
+  --site-border-soft: #c8d5c5;
+  --site-divider: #afc2ad;
+  --site-cta-bg: #cb4f2f;
   --site-cta-text: #faf8f4;
-  --site-cta-hover-bg: #461616;
-  --site-cta-active-bg: #461616;
-  --site-cta-ring: rgba(90, 31, 31, 0.35);
-  --site-cta-soft: rgba(90, 31, 31, 0.08);
-  --site-link: #2c4a3e;
-  --site-link-hover: #5a1f1f;
-  --site-primary: #2c4a3e;
-  --site-primary-hover: #243c32;
+  --site-cta-hover-bg: #b34327;
+  --site-cta-active-bg: #9c3a21;
+  --site-cta-ring: rgba(203, 79, 47, 0.36);
+  --site-cta-soft: rgba(203, 79, 47, 0.1);
+  --site-link: #123f38;
+  --site-link-hover: #2cc7a2;
+  --site-primary: #123f38;
+  --site-primary-hover: #0b2c27;
   --site-overlay-strong: rgba(0, 0, 0, 0.65);
   --site-overlay-text: #ffffff;
 }
@@ -68,7 +71,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
 }
 
 ::view-transition-old(root),
@@ -78,21 +81,21 @@ body {
 }
 
 .site-theme-v1 {
-  --text-hero: 60px;
-  --text-h2: 40px;
+  --text-hero: 64px;
+  --text-h2: 42px;
   --text-h3: 26px;
   --text-body-lg: 20px;
-  --text-body: 18px;
+  --text-body: 17px;
   --text-small: 14px;
-  --space-headline-bottom: 28px;
-  --space-paragraph: 18px;
-  --space-section-y: 96px;
+  --space-headline-bottom: 24px;
+  --space-paragraph: 16px;
+  --space-section-y: 100px;
 }
 
 @media (max-width: 768px) {
   .site-theme-v1 {
-    --text-hero: 40px;
-    --text-h2: 30px;
+    --text-hero: 42px;
+    --text-h2: 32px;
     --text-h3: 21px;
     --text-body-lg: 17px;
     --text-body: 16px;

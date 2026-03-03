@@ -22,7 +22,7 @@ export function HomeHero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-ui mb-6 text-xs font-medium uppercase tracking-[0.25em] text-[var(--site-on-dark-muted)]"
+            className="font-ui mb-6 text-xs font-medium uppercase tracking-[0.16em] text-[var(--site-on-dark-muted)]"
           >
             Miles Between Retreats
           </motion.p>
@@ -30,8 +30,8 @@ export function HomeHero() {
             <motion.h1
               initial={{ opacity: 0, y: 48 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="mb-8 font-serif text-5xl font-bold leading-[1.05] text-white md:text-7xl lg:text-[5.5rem]"
+              transition={{ duration: 0.72, delay: 0.45, ease: [0.2, 0.6, 0.3, 1] }}
+              className="mb-8 font-serif text-5xl font-semibold leading-[1.02] text-white md:text-7xl lg:text-[5.5rem]"
             >
               The run matters.
               <br />
@@ -61,7 +61,7 @@ export function HomeHero() {
                   page_type: 'home',
                 })
               }
-              className="font-ui bg-[var(--site-cta-bg)] px-8 py-4 text-sm font-medium tracking-[0.02em] text-[var(--site-cta-text)] transition-colors hover:bg-[var(--site-cta-hover-bg)]"
+              className="font-ui bg-[var(--site-cta-bg)] px-8 py-4 text-sm font-medium tracking-[0.015em] text-[var(--site-cta-text)] transition-colors hover:bg-[var(--site-cta-hover-bg)]"
             >
               Explore Retreats
             </TransitionLink>
@@ -73,7 +73,7 @@ export function HomeHero() {
                   page_type: 'home',
                 })
               }
-              className="font-ui border border-white/60 px-8 py-4 text-sm font-medium tracking-[0.02em] text-white transition-colors hover:bg-[var(--site-surface-elevated)]/10"
+              className="font-ui border border-white/60 px-8 py-4 text-sm font-medium tracking-[0.015em] text-white transition-colors hover:bg-[var(--site-surface-elevated)]/10"
             >
               See The Experience
             </TransitionLink>

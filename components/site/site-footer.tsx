@@ -7,12 +7,14 @@ import { TransitionLink } from '@/components/site/transition-link'
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[var(--site-accent-strong)] py-16">
+    <footer className="bg-gradient-to-b from-[var(--site-accent-strong)] to-[var(--site-accent-deep)] py-20">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <div>
-            <p className="mb-3 font-serif text-2xl font-bold text-[var(--site-on-dark-primary)]">MILES // BETWEEN</p>
-            <p className="text-sm leading-relaxed text-[var(--site-text-secondary)]">
+            <p className="mb-3 font-serif text-2xl font-semibold tracking-[0.01em] text-[var(--site-on-dark-primary)]">
+              MILES // BETWEEN
+            </p>
+            <p className="max-w-xs text-sm leading-relaxed text-[var(--site-text-secondary)]">
               Running retreats for people who love running.
             </p>
           </div>
@@ -32,7 +34,7 @@ export function SiteFooter() {
                 <TransitionLink
                   key={link.href}
                   href={link.href}
-                  className="font-ui text-sm tracking-[0.02em] text-[var(--site-on-dark-muted)] transition-colors hover:text-[var(--site-on-dark-primary)]"
+                  className="font-ui text-sm tracking-[0.015em] text-[var(--site-on-dark-muted)] transition-colors hover:text-[var(--site-on-dark-primary)]"
                 >
                   {link.label}
                 </TransitionLink>
@@ -46,7 +48,7 @@ export function SiteFooter() {
             </p>
             <a
               href={MAILTO_GENERAL}
-              className="font-ui text-sm tracking-[0.02em] text-[var(--site-on-dark-muted)] transition-colors hover:text-[var(--site-on-dark-primary)]"
+              className="font-ui text-sm tracking-[0.015em] text-[var(--site-on-dark-muted)] transition-colors hover:text-[var(--site-on-dark-primary)]"
             >
               {CONTACT_EMAIL_LABEL}
             </a>
@@ -61,7 +63,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-[color:var(--site-on-dark-primary)]/10 pt-8 text-center">
+        <div className="mt-12 border-t border-[color:var(--site-on-dark-primary)]/12 pt-8 text-center">
           <p className="text-xs text-[var(--site-text-secondary)]">
             © {new Date().getFullYear()} MILES // BETWEEN. All rights reserved.
           </p>

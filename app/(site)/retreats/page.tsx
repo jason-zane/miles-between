@@ -4,6 +4,7 @@ import { retreats } from '@/lib/retreats'
 import { Reveal } from '@/components/site/reveal'
 import { TransitionLink } from '@/components/site/transition-link'
 import { brandImagery } from '@/utils/brand/imagery'
+import { siteCardClasses, siteStatusClasses } from '@/utils/brand/site-brand'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -17,13 +18,6 @@ const STATUS_LABEL: Record<string, string> = {
   open: 'Registrations Open',
   'sold-out': 'Sold Out',
   interest: 'Coming Soon',
-}
-
-const STATUS_COLOR: Record<string, string> = {
-  upcoming: 'bg-emerald-100 text-emerald-800',
-  open: 'bg-[color:var(--site-cta-soft)] text-[var(--site-cta-bg)]',
-  'sold-out': 'bg-[var(--site-border-soft)] text-[var(--site-text-body)]',
-  interest: 'bg-amber-100 text-amber-900 border border-amber-200',
 }
 
 export default function RetreatsPage() {
@@ -59,15 +53,15 @@ export default function RetreatsPage() {
   return (
     <div className="bg-[var(--site-bg)] text-[var(--site-text-primary)]">
       {/* ── HEADER ────────────────────────────────────────────────────────── */}
-      <section className="bg-[var(--site-accent-strong)] pt-40 pb-24 md:pt-52 md:pb-32">
+      <section className="relative overflow-hidden border-b border-[color:var(--site-on-dark-primary)]/12 bg-gradient-to-b from-[var(--site-accent-strong)] to-[var(--site-accent-deep)] pt-40 pb-24 md:pt-52 md:pb-32">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <Reveal delay={0.1}>
-            <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.25em] text-[var(--site-text-secondary)]">
+            <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--site-text-secondary)]">
               Retreats
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <h1 className="font-serif text-5xl font-bold leading-[1.05] text-[var(--site-bg)] md:text-7xl">
+            <h1 className="font-serif text-5xl font-semibold leading-[1.02] text-[var(--site-bg)] md:text-7xl">
               Current retreats.
               <br />
               <span className="italic">Small groups only.</span>
@@ -89,7 +83,7 @@ export default function RetreatsPage() {
               <Reveal key={retreat.slug} delay={i * 0.1}>
                 <TransitionLink
                   href={'href' in retreat ? retreat.href : `/retreats/${retreat.slug}`}
-                  className="group flex h-full flex-col overflow-hidden border border-[var(--site-border-soft)] bg-[var(--site-surface-elevated)] transition-shadow hover:shadow-lg"
+                  className={`group flex h-full flex-col overflow-hidden ${siteCardClasses.interactive}`}
                 >
                   <div className="relative overflow-hidden">
                     <div className="relative aspect-[4/3] w-full overflow-hidden">
@@ -97,13 +91,13 @@ export default function RetreatsPage() {
                         src={retreat.heroImage}
                         alt={retreat.heroImageAlt}
                         fill
-                        className="object-cover object-[center_44%] transition-transform duration-700 ease-out group-hover:scale-[1.05] md:object-center"
+                        className="object-cover object-[center_44%] transition-transform duration-500 ease-out group-hover:scale-[1.02] md:object-center"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
                     <div className="absolute left-4 top-4">
                       <span
-                        className={`font-ui rounded-full px-3 py-1 text-xs font-medium ${STATUS_COLOR[retreat.status] ?? ''}`}
+                        className={`font-ui rounded-full px-3 py-1 text-xs font-semibold shadow-sm backdrop-blur-sm ${siteStatusClasses[retreat.status as keyof typeof siteStatusClasses] ?? ''}`}
                       >
                         {STATUS_LABEL[retreat.status] ?? 'Retreat'}
                       </span>

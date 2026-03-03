@@ -7,6 +7,7 @@ import { CountUp } from '@/components/site/count-up'
 import { StickyRetreatCta } from '@/components/site/sticky-retreat-cta'
 import { VenueImageCarousel } from '@/components/site/venue-image-carousel'
 import { getRetreat } from '@/lib/retreats'
+import { siteCardClasses } from '@/utils/brand/site-brand'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -38,12 +39,12 @@ export default async function RetreatPage({ params }: Props) {
       >
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-12">
           <Reveal delay={0.1}>
-            <p className="font-ui mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[var(--site-on-dark-muted)]">
+            <p className="font-ui mb-4 text-xs font-medium uppercase tracking-[0.16em] text-[var(--site-on-dark-muted)]">
               {retreat.region} • {retreat.datesShort}
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <h1 className="mb-5 font-serif text-5xl font-bold leading-[1.05] text-white md:text-7xl">
+            <h1 className="mb-5 font-serif text-5xl font-semibold leading-[1.02] text-white md:text-7xl">
               {retreat.name}
             </h1>
           </Reveal>
@@ -129,14 +130,14 @@ export default async function RetreatPage({ params }: Props) {
       </section>
 
       {/* ── THE VENUE ─────────────────────────────────────────────────────── */}
-      <section className="bg-[var(--site-surface-alt)] py-24 md:py-36">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
+      <section className="bg-[var(--site-surface-alt)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="flex items-center py-24 md:py-36">
             <Reveal delay={0.1}>
-              <div>
-              <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.2em] text-[var(--site-text-muted)]">
-                Where you'll stay
-              </p>
+              <div className="w-full px-6 md:px-12 lg:pl-[calc((100vw-80rem)/2)] lg:pr-16">
+                <p className="font-ui mb-5 text-xs font-medium uppercase tracking-[0.2em] text-[var(--site-text-muted)]">
+                  Where you&apos;ll stay
+                </p>
                 <h2 className="mb-8 font-serif text-4xl font-bold leading-[1.15] text-[var(--site-text-primary)] md:text-5xl">
                   {retreat.venueName}
                 </h2>
@@ -153,25 +154,22 @@ export default async function RetreatPage({ params }: Props) {
                 </ul>
               </div>
             </Reveal>
-
-            <Reveal delay={0.05} y={32}>
-              <div className="relative">
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
-                  <VenueImageCarousel
-                    images={
-                      retreat.venueGallery && retreat.venueGallery.length > 0
-                        ? retreat.venueGallery
-                        : [
-                            { src: retreat.venueImage, alt: retreat.venueImageAlt },
-                            { src: retreat.heroImage, alt: retreat.heroImageAlt },
-                          ]
-                    }
-                  />
-                </div>
-                <div className="absolute -bottom-5 -right-5 -z-10 h-32 w-32 rounded-sm bg-[var(--site-border-soft)]/40" />
-              </div>
-            </Reveal>
           </div>
+
+          <Reveal delay={0.05} y={32} className="min-h-[320px] lg:min-h-[560px]">
+            <div className="relative h-full w-full min-h-[320px] lg:min-h-[560px]">
+              <VenueImageCarousel
+                images={
+                  retreat.venueGallery && retreat.venueGallery.length > 0
+                    ? retreat.venueGallery
+                    : [
+                        { src: retreat.venueImage, alt: retreat.venueImageAlt },
+                        { src: retreat.heroImage, alt: retreat.heroImageAlt },
+                      ]
+                }
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -238,7 +236,7 @@ export default async function RetreatPage({ params }: Props) {
               },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 0.1}>
-                <div className="h-full border border-[var(--site-bg)]/10 bg-[var(--site-bg)]/5 p-8">
+                <div className={`h-full bg-[color:var(--site-on-dark-primary)]/6 p-8 ${siteCardClasses.default}`}>
                   <p className="font-ui mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--site-text-secondary)]">
                     {String(i + 1).padStart(2, '0')}
                   </p>
@@ -292,7 +290,7 @@ export default async function RetreatPage({ params }: Props) {
               },
             ].map((card, i) => (
               <Reveal key={card.day} delay={i * 0.08}>
-                <div className="h-full border border-[var(--site-border-soft)] bg-[var(--site-surface-elevated)] p-6">
+                <div className={`h-full p-6 ${siteCardClasses.default}`}>
                   <p className="font-ui mb-2 text-xs font-medium uppercase tracking-[0.2em] text-[var(--site-text-muted)]">
                     {card.day}
                   </p>
@@ -321,7 +319,7 @@ export default async function RetreatPage({ params }: Props) {
                 Pricing
               </p>
               <h2 className="font-serif text-4xl font-bold leading-[1.15] text-[var(--site-text-primary)] md:text-5xl">
-                What's included.
+                What&apos;s included.
               </h2>
             </div>
           </Reveal>
@@ -369,7 +367,7 @@ export default async function RetreatPage({ params }: Props) {
 
             {/* Price card */}
             <Reveal delay={0.2}>
-              <div className="h-fit border border-[var(--site-border-soft)] bg-[var(--site-bg)] p-8">
+              <div className={`h-fit bg-[var(--site-bg)] p-8 ${siteCardClasses.default}`}>
                 <p className="font-ui mb-1 text-xs font-medium uppercase tracking-[0.2em] text-[var(--site-text-muted)]">
                   From
                 </p>
